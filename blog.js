@@ -10,7 +10,7 @@ const db = monk(url);
 router.get('/', function(req, res, next) {
   const ct = db.get('blog')
   
-  ct.find({}).then((docs) => {
+  ct.find({},{}).then((docs) => {
     console.log(docs); 
     res.render('blog', {blogs : docs});
   })
